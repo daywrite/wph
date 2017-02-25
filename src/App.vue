@@ -24,10 +24,18 @@
 
 <script>
 import Hello from './components/Hello'
+/* 引入jquery
+   import jQuery from 'jquery'
+   jQuery('#app').css('background-color', 'red') */
+import $ from 'jquery'
 
 export default {
   components: {
     Hello
+  },
+  ready () {
+    console.log('compiled')
+    $('#app').css('background-color', 'red')
   }
 }
 </script>

@@ -18,7 +18,12 @@ module.exports = {
     alias: {
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      //jquery引入路径
+      //webpack 使用 jQuery，如果是自行下载的
+      //'jquery': path.resolve(__dirname, '../src/assets/libs/jquery/jquery.min'),
+      //如果使用NPM安装的jQuery
+      'jquery': path.resolve(__dirname,'../node_modules/jquery/src/jquery')
     }
   },
   resolveLoader: {
@@ -36,7 +41,8 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: /node_modules/
+        /* 增加/js/为了不检查bootstrap.js */
+        exclude: [/node_modules/, /js/]
       }
     ],
     loaders: [
