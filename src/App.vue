@@ -1,11 +1,14 @@
 <template>
-  <div id="app">   
-    <home></home> 
+  <div id="app">
+    <top></top>
+    <left><router-view></router-view></left>  
   </div>
 </template>
 
 <script>
 import Home from './components/Home'
+import Top from './components/layout/Top'
+import Left from './components/layout/Left'
 /* 引入jquery
    import jQuery from 'jquery'
    jQuery('#app').css('background-color', 'red') */
@@ -13,7 +16,9 @@ import Home from './components/Home'
 
 export default {
   components: {
-    Home
+    Home,
+    Top,
+    Left
   },
   ready () {
     console.log('compiled')
@@ -40,15 +45,5 @@ body {
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
 }
 </style>
