@@ -55,7 +55,7 @@ export default {
     }
   },
   components: {
-    'Pagination': Pagination
+    Pagination
   }
 }
 </script>
