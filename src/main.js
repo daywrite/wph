@@ -8,7 +8,12 @@ import './assets/css/bootstrap.css'
 import './assets/js/bootstrap'
 /* 引入vue-router0.7.3版本 */
 import VueRouter from 'vue-router'
+/* 引入ajax请求数据 */
+import VueResource from 'vue-resource'
+
 Vue.use(VueRouter)
+Vue.use(VueResource)
+
 var router = new VueRouter({
   linkActiveClass: 'active'
 })
@@ -26,10 +31,11 @@ router.map({
     }
   }
 })
-router.start(App, '#app')
 router.redirect({
   '*': '/home'
 })
+router.start(App, '#app')
+
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
