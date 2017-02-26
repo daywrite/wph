@@ -10,6 +10,8 @@ import './assets/js/bootstrap'
 import VueRouter from 'vue-router'
 /* 引入ajax请求数据 */
 import VueResource from 'vue-resource'
+/* 引入vuex */
+import store from './components/vuex/store'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -38,6 +40,7 @@ router.start(App, '#app')
 
 /* eslint-disable no-new */
 new Vue({
+  store,
   el: 'body',
   components: { App }
 })

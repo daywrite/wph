@@ -13,8 +13,9 @@ import Left from './components/layout/Left'
    import jQuery from 'jquery'
    jQuery('#app').css('background-color', 'red') */
 // import $ from 'jquery'
-
+import store from './components/vuex/store'
 export default {
+  store: store,
   components: {
     Home,
     Top,

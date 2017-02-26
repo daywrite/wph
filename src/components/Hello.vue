@@ -1,11 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button type="button" class="btn btn-danger">（危险）Danger</button>
+    <a class="btn btn-primary" @click='increment()'>+</a>
+    <a class="btn btn-primary" @click='reduce()'>-</a>
   </div>
 </template>
 
 <script>
+import { increaseCounter, reduceCounter } from './vuex/actions'
 export default {
   data () {
     return {
@@ -14,6 +15,12 @@ export default {
       // preserves its current state and we are modifying
       // its initial state.
       msg: 'Hello World!'
+    }
+  },
+  vuex: {
+    actions: {
+      increment: increaseCounter,
+      reduce: reduceCounter
     }
   }
 }

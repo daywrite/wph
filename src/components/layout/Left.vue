@@ -6,6 +6,8 @@
         <ul class="nav nav-sidebar">
             <li><a v-link="{ path: '/home' }">首页</a></li>
             <li><a v-link="{ path: '/hello' }">欢迎</a></li>
+            <li v-for='el in data'><a ><i class="fa fa-home"></i><span class="nav-label">vuex动态改变：{{el.name}}</span></a></li>
+            <li><a><i class="fa fa-home"></i>{{countValue}}</a></li>
         </ul>       
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -16,11 +18,21 @@
 </template>
 
 <script>
+import store from '../vuex/store'
 export default {
   name: 'left',
   data () {
     return {
       msg: 'Hello World!'
+    }
+  },
+  store: store,
+  vuex: {
+    getters: {
+      // 获取我们刚刚在store文件中定义的list数组对象
+      data: state => state.list,
+      // 获取count变量用于显示加减改变的值
+      countValue: state => state.count
     }
   }
 }
