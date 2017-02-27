@@ -12,6 +12,9 @@ import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 /* 引入vuex */
 import store from './components/vuex/store'
+/* mock模拟数据全局加载 */
+import Mock from './mock'
+Mock.bootstrap()
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -31,11 +34,17 @@ router.map({
     component: function (resolve) {
       require(['./components/Hello'], resolve)
     }
+  },
+  '/vuext': {
+    name: 'vuext',
+    component: function (resolve) {
+      require(['./components/Vuext'], resolve)
+    }
   }
 })
-router.redirect({
-  '*': '/home'
-})
+// router.redirect({
+//   '*': '/home'
+// })
 router.start(App, '#app')
 
 /* eslint-disable no-new */

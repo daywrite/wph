@@ -14,7 +14,11 @@
   },
   "dependencies": {
     "ajax": "0.0.4",
+    "axios": "^0.15.3",
+    "axios-mock-adapter": "^1.7.1",
     "babel-runtime": "^6.0.0",
+    "mockjs": "^1.0.1-beta3",
+    "opn": "^4.0.2",
     "vue": "^1.0.21",
     "vue-resource": "^1.2.0",
     "vue-router": "^0.7.3",

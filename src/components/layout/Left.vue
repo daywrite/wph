@@ -8,6 +8,7 @@
             <li><a v-link="{ path: '/hello' }">欢迎</a></li>
             <li v-for='el in data'><a ><i class="fa fa-home"></i><span class="nav-label">vuex动态改变：{{el.name}}</span></a></li>
             <li><a><i class="fa fa-home"></i>{{countValue}}</a></li>
+            <li><a v-link="{ path: '/vuext' }">vuex</a></li>
         </ul>       
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

@@ -6,7 +6,8 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
-
+/* 打开url地址链接 */
+var opn = require('opn')
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port
 // Define HTTP proxies to your custom API backend
@@ -62,4 +63,5 @@ module.exports = app.listen(port, function (err) {
     return
   }
   console.log('Listening at http://localhost:' + port + '\n')
+  opn(uri)
 })
