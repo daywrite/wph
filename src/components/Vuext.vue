@@ -1,5 +1,27 @@
 <template>
   <div id="vuext">
+    <div id="handleAdd" v-show="showAdd">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" @click="handleAddClose">&times;</button>
+            <h4 class="modal-title">新增</h4>
+         </div>
+         <div class="modal-body">
+            <div class="form-group">
+              <label>标题</label>
+              <input type="text" class="form-control" placeholder="请输入标题" id="title"/>
+            </div>
+            <div class="form-group">
+              <label>作者</label>
+              <input type="text" class="form-control" placeholder="请输入作者" id="name"/>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" @click="handleAddClose">关闭</button>
+            <button type="button" class="btn btn-warning">提交</button>
+         </div>
+      </div>
+    </div>
     <div class="spinner" v-show="loading">
       <div class="rect1"></div>
       <div class="rect2"></div>
@@ -8,7 +30,7 @@
       <div class="rect5"></div>
     </div>
     <div class="form-group" style="text-align: left">
-      <input type="button" class="btn btn-success" value="新增" />
+      <input type="button" class="btn btn-success" value="新增" @click="handleAdd"/>
     </div>
     <div class="table-responsive">
     <table class="table table-striped table-bordered table-hover">
@@ -48,6 +70,8 @@ export default {
     return {
       // 加载
       loading: false,
+      // 新增
+      showAdd: false,
       articles: []
     }
   },
@@ -70,6 +94,13 @@ export default {
         this.loading = false
         this.articles = res.data.articles
       })
+    },
+    // 新增
+    handleAdd: function () {
+      this.showAdd = true
+    },
+    handleAddClose: function () {
+      this.showAdd = false
     }
   }
 }
@@ -79,6 +110,15 @@ export default {
 <style scoped>
   table tr th{
     text-align: center;
+  }
+
+  #handleAdd {
+    position: absolute;
+    top:20%;
+    left:30%;
+    width:600px;
+    text-align: left;
+    z-index: 999999;
   }
   /* loading */
   .spinner {
