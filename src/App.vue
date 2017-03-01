@@ -22,7 +22,7 @@ export default {
     Left
   },
   ready () {
-    console.log('compiled')
+    // console.log('compiled')
     // $('#app').css('background-color', 'red')
   }
 }

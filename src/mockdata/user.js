@@ -1,12 +1,16 @@
 import Mock from 'mockjs'
 
-const Users = []
+let Users = []
+let Random = Mock.Random
 
-for (let i in 40) {
+for (var i=0; i<40; i++) {
   Users.push (Mock.mock ({
     id: Mock.Random.guid(),
-    name: Mock.Random.cname(),
-    'age|18-60': 1
+    title: Mock.Random.title(3,7),
+    date: Random.date(),
+    name: Random.name(),
+    replyCount: Random.integer(20,100),
+    visitCount: Random.integer(100,100)
   }))
 }
 export { Users }
