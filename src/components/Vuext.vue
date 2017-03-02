@@ -107,7 +107,10 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss" scoped>
+  /* 测试scss */
+  $loadColor: #67CF22;
+
   table tr th{
     text-align: center;
   }
@@ -133,7 +136,7 @@ export default {
 }
  
 .spinner > div {
-  background-color: #67CF22;
+  background-color: $loadColor;
   height: 100%;
   width: 6px;
   display: inline-block;
