@@ -107,14 +107,27 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style scoped lang="scss">
   /* 测试scss */
+  @import 'common.scss';
   $loadColor: #67CF22;
 
   table tr th{
     text-align: center;
   }
-
+  /* div进入或者出门效果 */
+  .expand-transition {
+    transition: all .3s ease;
+    height: 30px;
+    padding: 10px;
+    background-color: #eee;
+    overflow: hidden;
+  } 
+  .expand-enter, .expand-leave {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+  }
   #handleAdd {
     position: absolute;
     top:20%;
@@ -136,7 +149,7 @@ export default {
 }
  
 .spinner > div {
-  background-color: $loadColor;
+  background-color: $baseColor;
   height: 100%;
   width: 6px;
   display: inline-block;

@@ -94,6 +94,9 @@ ul li .active{
     top: 51px;
     bottom: 0;
     left: 0;
+    
+    /* 右侧内容 */
+    overflow: auto;
   }
 }
 </style>

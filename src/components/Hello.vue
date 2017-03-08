@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <a class="btn btn-primary" @click='increment()'>+</a>
+    <a class="btn btn-success" @click='increment()'>+</a>
     <a class="btn btn-primary" @click='reduce()'>-</a>
   </div>
 </template>
