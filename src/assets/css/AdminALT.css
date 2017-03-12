@@ -47,3 +47,7 @@ body {
   cursor: pointer;
   color: white;
 }
+
+.main-header .navbar-custom-menu, .main-header .navbar-right {
+    float: right;
+}
