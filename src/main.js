@@ -6,6 +6,10 @@ import $ from 'jquery'
 /* 引入bootstrap */
 import './assets/css/bootstrap.css'
 import './assets/js/bootstrap'
+/* 3-12 引入AdminALT */
+import './assets/css/AdminALT.css'
+import './assets/css/skin-blue.css'
+
 /* 引入vue-router0.7.3版本 */
 import VueRouter from 'vue-router'
 /* 引入ajax请求数据 */

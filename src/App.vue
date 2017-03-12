@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top></top>
+    <Top></Top>
     <left><router-view></router-view></left>  
   </div>
 </template>
@@ -29,21 +29,12 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
 #app {
+  /* 定义最外层div定位模式 */
+  position: relative;
   color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
 }

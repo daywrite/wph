@@ -1,16 +1,14 @@
 <template>
-   <!--header导航条-->
+<header class="main-header">
+  <a class="logo"><span class="logo-wph">唯品会</span></a>
+  <!--header导航条-->
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <ul class="nav navbar-top-links navbar-right">
-          <li @click='change'>
-            <a><i class="fa fa-user"></i>欢迎老黄</a>
-          </li>        
-        </ul>
-      </nav>
-    </div>
+    <a class="sidebar-toggle"><span class="glyphicon glyphicon-th"></span></a>
+    <div class="navbar-custom-menu">
+      
+    </div>  
   </nav>
+</header>
 </template>
 
 <script>
